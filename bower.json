@@ -1,0 +1,28 @@
+{
+  "name": "Get Post",
+  "description": "training",
+  "main": "server.js",
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5.2",
+    "bootstrap": "~3.3.6",
+    "angular-route": "^1.5.8",
+    "angular-ui-grid": "^3.2.9",
+    "angular-bootstrap": "^2.2.0",
+    "angularMultipleSelect": "angular-multiple-select#^1.1.2",
+    "js-xlsx": "^0.8.0",
+    "angular-ui-ace": "bower"
+  },
+  "resolutions": {
+    "angular": ">=1.4.0"
+  }
+}

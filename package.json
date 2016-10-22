@@ -1,0 +1,31 @@
+{
+  "name": "get_post",
+  "version": "1.0.0",
+  "description": "GET POST Example",
+  "main": "app.js",
+  "scripts": {
+    "test": "n/a"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/n/a.git"
+  },
+  "keywords": [
+    "auth",
+    "fb"
+  ],
+  "author": "Priytam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/n/a/issues"
+  },
+  "homepage": "https://github.com/n/a#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "mssql": "^3.3.0",
+    "xlsx-to-json": "^0.2.4"
+  }
+}

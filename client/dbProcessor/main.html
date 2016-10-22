@@ -1,0 +1,70 @@
+<div>
+    <uib-accordion close-others="true">
+        <div uib-accordion-group data-ng-repeat="doc in vm.selectedDocs" class="panel-default" heading="Table {{$index}} selected columns" is-open="false">
+            <span class="badge" data-ng-repeat="d in doc.col"> {{d.name}} </span>
+        </div>
+    </uib-accordion>
+
+    <div class="panel panel-default">
+        <div class = "panel-heading">
+            <button ng-show="vm.gridOptions.data.length" class="btn btn-default" ng-click="vm.open()">Select columns</button>
+            <button ng-show="vm.gridOptions.data.length" class="btn btn-default" ng-click="vm.selectAll()">Select All Columns</button>
+            <button ng-show="vm.gridOptions.data.length" class="btn btn-default" ng-click="vm.queryMore()">Query another db</button>
+            <button ng-show="vm.selectedDocs.length" class="btn btn-default pull-right" ng-click="vm.finish() ">Merge Columns</button>
+        </div>
+        <div id="grid1" ui-grid="vm.gridOptions" class="grid" ui-grid-exporter ui-grid-selection>
+            <div class="grid-msg-overlay" ng-show="!vm.gridOptions.data.length">
+                <div class="msg">
+                    <div class="row center">
+                        <form name="dbForm" class="form-horizontal">
+                            <div class="col-xs-6">
+                                <div class="form-group">
+                                    <label for="server" class="control-label col-xs-2">Server</label>
+                                    <div class="col-xs-10">
+                                        <input required type="text" class="form-control" ng-model="vm.db.config.server" id="server" placeholder="Server">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="port" class="control-label col-xs-2">Port</label>
+                                    <div class="col-xs-10">
+                                        <input required type="text" class="form-control" ng-model="vm.db.config.port" id="port" placeholder="Port">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="database" class="control-label col-xs-2">DataBase</label>
+                                    <div class="col-xs-10">
+                                        <input required type="text" class="form-control" ng-model="vm.db.config.database" id="database" placeholder="DataBase">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="user" class="control-label col-xs-2">User</label>
+                                    <div class="col-xs-10">
+                                        <input required type="text" class="form-control" ng-model="vm.db.config.user" id="user" placeholder="User">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="inputPassword" class="control-label col-xs-2">Password</label>
+                                    <div class="col-xs-10">
+                                        <input required type="password" class="form-control" ng-model="vm.db.config.password" id="inputPassword" placeholder="Password">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-xs-offset-6 col-xs-6">
+                                        <button  type="submit" ng-click="vm.query()" ng-disabled="!vm.db.query" class="btn btn-default pull-right">Query</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-xs-6">
+                                <div  required ui-ace="{ onLoad : vm.aceLoaded }" ng-model="vm.db.query" name="query"></div>
+                                <span class="help-block">
+                                            write query for selected data base
+                                </span>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

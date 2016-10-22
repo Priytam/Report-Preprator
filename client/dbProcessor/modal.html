@@ -1,0 +1,15 @@
+<div class="modal-header">
+    <h3 class="modal-title" id="modal-title">Select Columns</h3>
+</div>
+<div class="modal-body" id="modal-body">
+    <multiple-autocomplete ng-model="vm.selectedItems"
+                           object-property="name"
+                           required="true"
+                           after-select-item="vm.afterSelectItem"
+                           suggestions-arr="vm.items">
+    </multiple-autocomplete>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-primary" ng-click="vm.ok()">Submit</button>
+    <button class="btn btn-warning" type="button" ng-click="vm.cancel()">Cancel</button>
+</div>
